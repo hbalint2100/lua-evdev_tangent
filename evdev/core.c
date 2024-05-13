@@ -99,7 +99,7 @@ static int evdev_tryRead(lua_State *L) {
 	}
 
 	/* return: timestamp, event type, event code, event value */
-	lua_pushnumber(L, evt.time.tv_sec + evt.time.tv_usec/1000000.0);
+	lua_pushnumber(L, input_event_sec + input_event_usec/1000000.0);
 	lua_pushinteger(L, evt.type);
 	lua_pushinteger(L, evt.code);
 	lua_pushinteger(L, evt.value);
